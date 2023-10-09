@@ -79,6 +79,29 @@ namespace InstinctPOS.DataAccess.Database
             }
             return response;
         }
+
+
+        public async Task<int> UpdateExpense(Expense request)
+        {
+            try
+            {
+                var query = @"[Update_Expense]";
+                var param = new
+                {
+                    ExpensesName = request.ExpensesName,
+                    Amount = request.Amount,
+                    Description = request.Description,
+                    ModifiedBy = request.ModifiedBy,
+                    Id = request.Id
+                };
+                return await _connection.ExecuteAsync(query, param, commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+
+                return 0;
+            }
+        }
  
     }
 }

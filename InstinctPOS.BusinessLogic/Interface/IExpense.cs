@@ -14,6 +14,6 @@ namespace InstinctPOS.BusinessLogic.Interface
         Task<APIListResponse3<Expense>> GetExpense(int pageNumber, int pageSize);
         Task<APIResponse<Expense>> GetSingleExpense(int Id);
         Task<APIResponse<CreateExpenseDto>> CreateExpense(CreateExpenseDto request);
-        Task<APIResponse<UpdateExpenseDto>> UpdateCategory(UpdateExpenseDto request);
+        Task<APIResponse<UpdateExpenseDto>> UpdateExpense(UpdateExpenseDto request);
     }
 }
