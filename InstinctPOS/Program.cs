@@ -17,6 +17,10 @@ builder.Services.AddTransient<IDbConnection>(prov  => new SqlConnection(prov.Get
 
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IExpense, ExpenseRepo>();
